@@ -13,15 +13,15 @@ Iara is a tool that uses GitHub API to search through users/orgs for leaks and s
   pip install -r requirements.txt
   
 ## Usage
-
+- Inside the repository directory in your terminal, use this command:
   ```python iara.py -u "USER/ORG" -r "REPO_NAME" -t "YOUR_GITHUB_TOKEN"```
 
 ## CLI Flags
 
--  <b>-h, --help</b>   Show help message
--  <b>-u, -user</b>    User or organization to search in.
--  <b>-t, -token</b>   Insert your GitHub Token if you want to do an authenticated search. *Optional
--  <b>-r, -repo</b>    Insert a repo if you want to do a more specific search. *Optional
+-  ```-h, --help```   Show help message
+-  ```-u, -user```    User or organization to search in.
+-  ```-t, -token```   Insert your GitHub Token if you want to do an authenticated search. *Optional
+-  ```-r, -repo```    Insert a repo if you want to do a more specific search. *Optional
 
 ## Roadmap
 
