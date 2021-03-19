@@ -9,10 +9,10 @@ Iara is a tool that uses GitHub API to search through users/orgs for leaks and s
 
 ## CLI Flags
 
--  -h, --help Show help message\n
--  -u, -user User or organization to search in.\n
--  -t, -token Insert your GitHub Token if you want to do an authenticated search.\n
--  -r, -repo Insert a repo if you want to do a more specific search.\n
+-  -h, --help  Show help message\n
+-  -u, -user   User or organization to search in.\n
+-  -t, -token  Insert your GitHub Token if you want to do an authenticated search.\n
+-  -r, -repo   Insert a repo if you want to do a more specific search.\n
 
 ## Roadmap
 
