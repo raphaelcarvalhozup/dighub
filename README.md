@@ -7,12 +7,21 @@
 Iara is a tool that uses GitHub API to search through users/orgs for leaks and show it to the user in a friendly way. You can use an Authentication Token your GitHub account to access private repos and it is possible to specify the repo that you want to search in.
 </p>
 
+## Installation
+- You will need Python installed.
+- Clone this repository and then, inside its folder, run
+  pip install -r requirements.txt
+  
+## Usage
+
+  python iara.py -u "USER/ORG" -r "REPO_NAME" -t "YOUR_GITHUB_TOKEN"
+
 ## CLI Flags
 
 -  <b>-h, --help</b>   Show help message
 -  <b>-u, -user</b>    User or organization to search in.
--  <b>-t, -token</b>   Insert your GitHub Token if you want to do an authenticated search.
--  <b>-r, -repo</b>    Insert a repo if you want to do a more specific search.
+-  <b>-t, -token</b>   Insert your GitHub Token if you want to do an authenticated search. *Optional
+-  <b>-r, -repo</b>    Insert a repo if you want to do a more specific search. *Optional
 
 ## Roadmap
 
