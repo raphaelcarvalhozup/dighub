@@ -14,7 +14,7 @@ Iara is a tool that uses GitHub API to search through users/orgs for leaks and s
   
 ## Usage
 
-  python iara.py -u "USER/ORG" -r "REPO_NAME" -t "YOUR_GITHUB_TOKEN"
+  ```python iara.py -u "USER/ORG" -r "REPO_NAME" -t "YOUR_GITHUB_TOKEN"```
 
 ## CLI Flags
 
