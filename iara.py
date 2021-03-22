@@ -1,32 +1,44 @@
+#!/usr/bin/env python3
+
 import argparse
 import searcher
 
-parser = argparse.ArgumentParser(prog='toth', description='This tool uses GitHub API to do searchs hunting specific leaks. There are parameters that will really help to get a better search. Remember, authenticated searches take less time because you have more requests per minute.')
-parser.add_argument('-user',
-                    type=str,
-                    required=True,
-                    help='User or Organization to search in.')
-parser.add_argument('-token',
-                    action='store',
-                    type=str,
-                    required=False,
-                    help='Insert your token if you want to do an authenticated search.')
 
-parser.add_argument('-repo',
-                    action='store',
-                    type=str,
-                    required=False,
-                    help='Insert a repo if you want to do a more specific search.')
+def main():
+    parser = argparse.ArgumentParser(prog='toth',
+                                     description='This tool uses GitHub API to do searchs hunting specific '
+                                                 'leaks. There are parameters that will really help to get a '
+                                                 'better search. Remember, authenticated searches take less '
+                                                 'time because you have more requests per minute.')
 
-parsedArgs = parser.parse_args()
+    parser.add_argument('-user',
+                        type=str,
+                        required=True,
+                        help='User or Organization to search in.')
 
-user = parsedArgs.user
+    parser.add_argument('-token',
+                        action='store',
+                        type=str,
+                        required=False,
+                        help='Insert your token if you want to do an authenticated search.')
 
-token = parsedArgs.token
+    parser.add_argument('-repo',
+                        action='store',
+                        type=str,
+                        required=False,
+                        help='Insert a repo if you want to do a more specific search.')
 
-repo = parsedArgs.repo
+    parsed_args = parser.parse_args()
 
-if(token):
-    searcher.search(user, token, repo)
-else:
-    searcher.search(user, None, repo)
+    user = parsed_args.user
+    token = parsed_args.token
+    repo = parsed_args.repo
+
+    if token:
+        searcher.search(user, token, repo)
+    else:
+        searcher.search(user, None, repo)
+
+
+if __name__ == '__main__':
+    main()
