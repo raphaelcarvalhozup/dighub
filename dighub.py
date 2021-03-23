@@ -11,18 +11,18 @@ def main():
                                                  'better search. Remember, authenticated searches take less '
                                                  'time because you have more requests per minute.')
 
-    parser.add_argument('-user',
+    parser.add_argument('--user','-u',
                         type=str,
                         required=True,
                         help='User or Organization to search in.')
 
-    parser.add_argument('-token',
+    parser.add_argument('--token','-t',
                         action='store',
                         type=str,
                         required=False,
                         help='Insert your token if you want to do an authenticated search.')
 
-    parser.add_argument('-repo',
+    parser.add_argument('--repo','-r',
                         action='store',
                         type=str,
                         required=False,

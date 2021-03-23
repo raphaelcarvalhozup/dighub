@@ -1,14 +1,13 @@
-<p align="center">
-</p>
+<a href="https://github.com/raphaelcarvalhozup/dighub">
+  <img src="./images/logo.png" width="250" />
+</a>
 <h1 align="center">
-  Toth - The patient GitHub leak hunter<br>
+  DigHub - The patient GitHub leak hunter<br>
 </h1>
-
-
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Toth is a tool that uses GitHub API to search through users/orgs for leaks and shows it to the user in a friendly way. You can use an Authentication Token your GitHub account to access private repos and it is possible to specify the repo that you want to search in.
+DigHub is a tool that uses GitHub API to search through users/orgs for leaks and shows it to the user in a friendly way. You can use an Authentication Token your GitHub account to access private repos and it is possible to specify the repo that you want to search in.
 
 ---
 
@@ -19,7 +18,7 @@ Toth is a tool that uses GitHub API to search through users/orgs for leaks and s
   
 ## Usage
 - Inside the repository directory in your terminal, use this command:<br>
-  ```python iara.py -u "USER/ORG" -r "REPO_NAME" -t "YOUR_GITHUB_TOKEN"```
+  ```python dighub.py -u "USER/ORG" -r "REPO_NAME" -t "YOUR_GITHUB_TOKEN"```
 
 ## CLI Flags
 
@@ -38,3 +37,8 @@ Toth is a tool that uses GitHub API to search through users/orgs for leaks and s
 - [ ] Return more than 1 snippet per code.
 - [ ] Create a file output.
 - [ ] Create a graphical output with HTML.
+
+---
+
+<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+The source code is licensed under [Apache-2.0](https://opensource.org/licenses/Apache-2.0).
