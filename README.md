@@ -1,12 +1,7 @@
 <p align="center">
 </p>
 <h1 align="center">
-  _______    _   _ \n    
- |__   __|  | | | |\n    
-    | | ___ | |_| |__\n  
-    | |/ _ \| __| '_ \\n 
-    | | (_) | |_| | | |\n
-    |_|\___/ \__|_| |_|\n
+  Toth
   The patient GitHub leak hunter
 </h1>
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
