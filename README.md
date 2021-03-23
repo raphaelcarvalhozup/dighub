@@ -14,8 +14,8 @@ Toth is a tool that uses GitHub API to search through users/orgs for leaks and s
 
 ## Installation
 - You will need Python installed.
-- Clone this repository and then, inside its folder, run
-  pip install -r requirements.txt
+- Clone this repository and then, inside its folder, run:<br>
+  ```pip install -r requirements.txt```
   
 ## Usage
 - Inside the repository directory in your terminal, use this command:<br>
