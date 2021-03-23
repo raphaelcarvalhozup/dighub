@@ -4,10 +4,10 @@
   Toth<br>
   The patient GitHub leak hunter
 </h1>
+
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-<p>
+
 Toth is a tool that uses GitHub API to search through users/orgs for leaks and shows it to the user in a friendly way. You can use an Authentication Token your GitHub account to access private repos and it is possible to specify the repo that you want to search in.
-</p>
 
 ---
 
