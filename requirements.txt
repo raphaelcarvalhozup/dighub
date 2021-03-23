@@ -1,3 +1,4 @@
 argparse
 searcher
 colorama
+requests
