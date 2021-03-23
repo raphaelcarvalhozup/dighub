@@ -3,7 +3,7 @@
 <h1 align="center">
   Toth<br>
 </h1>
-<h3>The patient GitHub leak hunter</h3>
+The patient GitHub leak hunter
 
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
