@@ -1,3 +1,4 @@
+<p align="center">
 <a href="https://github.com/raphaelcarvalhozup/dighub">
   <img src="./images/logo.png" width="250" />
 </a>
