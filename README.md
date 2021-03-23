@@ -1,7 +1,7 @@
 <p align="center">
 </p>
 <h1 align="center">
-  Toth
+  Toth<br>
   The patient GitHub leak hunter
 </h1>
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
