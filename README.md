@@ -1,11 +1,20 @@
 <p align="center">
 </p>
 <h1 align="center">
-  Toth
+  _______    _   _     
+ |__   __|  | | | |    
+    | | ___ | |_| |__  
+    | |/ _ \| __| '_ \ 
+    | | (_) | |_| | | |
+    |_|\___/ \__|_| |_|
+  The patient GitHub leak hunter
 </h1>
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 <p>
 Toth is a tool that uses GitHub API to search through users/orgs for leaks and shows it to the user in a friendly way. You can use an Authentication Token your GitHub account to access private repos and it is possible to specify the repo that you want to search in.
 </p>
+
+---
 
 ## Installation
 - You will need Python installed.
@@ -19,9 +28,11 @@ Toth is a tool that uses GitHub API to search through users/orgs for leaks and s
 ## CLI Flags
 
 -  ```-h, --help```   Show help message
--  ```-u, -user```    User or organization to search in.
--  ```-t, -token```   Insert your GitHub Token if you want to do an authenticated search. *Optional
--  ```-r, -repo```    Insert a repo if you want to do a more specific search. *Optional
+-  ```-u, --user```    User or organization to search in.
+-  ```-t, --token```   Insert your GitHub Token if you want to do an authenticated search. *Optional
+-  ```-r, --repo```    Insert a repo if you want to do a more specific search. *Optional
+
+---
 
 ## Roadmap
 
