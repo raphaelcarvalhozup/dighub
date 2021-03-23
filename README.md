@@ -1,10 +1,10 @@
 <p align="center">
 </p>
 <h1 align="center">
-  Iara
+  Toth
 </h1>
 <p>
-Iara is a tool that uses GitHub API to search through users/orgs for leaks and show it to the user in a friendly way. You can use an Authentication Token your GitHub account to access private repos and it is possible to specify the repo that you want to search in.
+Toth is a tool that uses GitHub API to search through users/orgs for leaks and shows it to the user in a friendly way. You can use an Authentication Token your GitHub account to access private repos and it is possible to specify the repo that you want to search in.
 </p>
 
 ## Installation
