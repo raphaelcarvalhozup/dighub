@@ -25,13 +25,13 @@ DigHub is a tool that uses GitHub API to search through users/orgs for leaks and
 ```TOKEN="YOUR_TOKEN_HERE"```
 
 - Execution Line and Result Not Found example:
-<img src="./images/dighubhead.PNG">
+<img src="./images/dighubhead.PNG" width="100">
 
 - Filename search result example:
-<img src="./images/filenameexample.png">
+<img src="./images/filenameexample.PNG" width="100">
 
 - String search result example:
-<img src="./images/resultexample.png">
+<img src="./images/resultexample.PNG" width="100">
 
 ## CLI Flags
 
