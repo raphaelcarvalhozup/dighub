@@ -44,7 +44,7 @@ DigHub is a tool that uses GitHub API to search through users/orgs for leaks and
 
 ## Using your own Dorklist
 
-- While there is not a very simple way to select custom Dorklists yet, you can access the ```searcher.py``` file and change it manually, choosing a file of your preference, in this line:
+- While there is not a very simple way to select custom Dorklists yet, you can access the ```searcher.py``` file and change it manually, choosing a file of your preference, in this line:<br>
 ```dorks = open('./small_dorklist.txt').read().splitlines()```
 
 ---
