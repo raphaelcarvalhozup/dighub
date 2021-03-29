@@ -20,12 +20,12 @@ def search(user, token, repo):
 
         if(token):
             if(repo != None):
-                parsedResponse = requests.get('https://api.github.com/search/code?q=%s' % urllib.quote(('user:'+user+' '+string+' '+'repo:'+' '+repo)), headers={'Authorization': 'token %s' % token})
+                parsedResponse = requests.get('https://api.github.com/search/code?q=%s' % urllib.quote(('repo:'+user+'/'+repo+' '+string)), headers={'Authorization': 'token %s' % token})
             else:
                 parsedResponse = requests.get('https://api.github.com/search/code?q=%s' % urllib.quote(('user:'+user+' '+string)), headers={'Authorization': 'token %s' % token})
         else:
             if(repo != None):
-                parsedResponse = requests.get('https://api.github.com/search/code?q=%s' % urllib.quote(('user:'+user+' '+string+' '+'repo:'+' '+repo)))
+                parsedResponse = requests.get('https://api.github.com/search/code?q=%s' % urllib.quote(('repo:'+user+'/'+repo+' '+string)))
             else:
                 parsedResponse = requests.get('https://api.github.com/search/code?q=%s' % urllib.quote(('user:'+user+' '+string)))
 

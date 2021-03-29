@@ -5,7 +5,7 @@ import searcher
 
 
 def main():
-    parser = argparse.ArgumentParser(prog='toth',
+    parser = argparse.ArgumentParser(prog='dighub',
                                      description='This tool uses GitHub API to do searchs hunting specific '
                                                  'leaks. There are parameters that will really help to get a '
                                                  'better search. Remember, authenticated searches take less '

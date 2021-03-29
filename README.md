@@ -21,12 +21,31 @@ DigHub is a tool that uses GitHub API to search through users/orgs for leaks and
 - Inside the repository directory in your terminal, use this command:<br>
   ```python dighub.py -u "USER/ORG" -r "REPO_NAME" -t "YOUR_GITHUB_TOKEN"```
 
+- As an secure measure, you can set your token as an environment variable, in a way that you do not need to have your GitHub token in your terminal everytime you use the tool, for example:
+```TOKEN="YOUR_TOKEN_HERE"```
+
+- Execution Line and Result Not Found example:
+<img src="./images/dighubhead.PNG">
+
+- Filename search result example:
+<img src="./images/filenameexample.png">
+
+- String search result example:
+<img src="./images/resultexample.png">
+
 ## CLI Flags
 
--  ```-h, --help```   Show help message
+-  ```-h, --help```   Show help message.
 -  ```-u, --user```    User or organization to search in.
 -  ```-t, --token```   Insert your GitHub Token if you want to do an authenticated search. *Optional
 -  ```-r, --repo```    Insert a repo if you want to do a more specific search. *Optional
+
+---
+
+## Using your own Dorklist
+
+- While there is not a very simple way to select custom Dorklists yet, you can access the ```searcher.py``` file and change it manually, choosing a file of your preference, in this line:
+```dorks = open('./small_dorklist.txt').read().splitlines()```
 
 ---
 
