@@ -43,17 +43,20 @@ DigHub is a tool that uses GitHub API to search through users/orgs for leaks and
 
 ---
 
-## Dorklists
+## Custom Dorklists
 
 - DigHub already has two dorklists for you to use, the standard one being ```small_dorklist.txt```. You can create your own lists and set its path with ```-l``` flag.<br>
 ```-l "../Documents/customdorks.txt"```
+
+- The list should be in text format and look like this:<br>
+  <img src="./images/listexample.PNG" width="400">
 
 ---
 
 ## Roadmap
 
 - [x] MVP 
-- [ ] Arg for dork list selection
+- [x] Arg for dork list selection
 - [ ] Improve search with strings that have more than 2 words.
 - [ ] Return more than 1 snippet per code.
 - [ ] Create a file output.
