@@ -28,16 +28,23 @@ def main():
                         required=False,
                         help='Insert a repo if you want to do a more specific search.')
 
+    parser.add_argument('--list', '-l',
+                        action='store',
+                        type=str,
+                        required=False,
+                        help='If you want a custom Dork list, insert the list path here.')
+
     parsed_args = parser.parse_args()
 
     user = parsed_args.user
     token = parsed_args.token
     repo = parsed_args.repo
+    dorklist = parsed_args.list
 
     if token:
-        searcher.search(user, token, repo)
+        searcher.search(user, token, repo, dorklist)
     else:
-        searcher.search(user, None, repo)
+        searcher.search(user, None, repo, dorklist)
 
 
 if __name__ == '__main__':

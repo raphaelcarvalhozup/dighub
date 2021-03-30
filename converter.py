@@ -3,73 +3,69 @@ import requests
 import sys
 import re
 
-def converter(content, string):
+def converter(content, dork):
 
-    stringBase = string
+    string_base = dork
 
-    space = string.find(' ')
+    space = dork.find(' ')
 
-    if(space != -1):
-        stringParts = string.split()
-        string = stringParts[0]
+    if space != -1:
+        string_parts = dork.split()
+        dork = string_parts[0]
 
-    stringLength = len(string)
-    encodedContent = content
-    byteDecodedContent = base64.standard_b64decode(encodedContent)
-    stringDecodedContent = byteDecodedContent.decode("UTF-8")
+    string_length = len(dork)
+    encoded_content = content
+    decoded_64content = base64.standard_b64decode(encoded_content)
+    decoded_content = decoded_64content.decode("UTF-8")
 
-    #lowerDecoded = stringDecodedContent.lower()
+    lines = decoded_content.split('\n')
 
-    lines = stringDecodedContent.split('\n')
+    code_position = decoded_content.find(dork)
 
-#    linesQtt = len(lines)
-
-    codePosition = stringDecodedContent.find(string)
-
-    if(codePosition):
-        codeLine = [i for i, s in enumerate(lines) if string in s]
-        if(codeLine):
-            print('Number of ocurrences: ', len(codeLine))
-            line = int(codeLine[0]) + 1
+    if code_position:
+        code_line = [i for i, s in enumerate(lines) if dork in s]
+        if code_line:
+            print('Number of ocurrences: ', len(code_line))
+            line = int(code_line[0]) + 1
             print('First occurrence line: ', line)
         else:
-            stringParts = stringBase.split(' ')
-            componentsQt = len(stringParts)
-            if(componentsQt > 1):
-                string = stringParts[1]
-                stringLength = len(string)
-                codeLine = [i for i, s in enumerate(lines) if string in s]
-            if(codeLine):
-                print('Number of ocurrences: ', len(codeLine))
-                line = int(codeLine[0]) + 1
+            string_parts = string_base.split(' ')
+            componentsQt = len(string_parts)
+            if componentsQt > 1:
+                dork = string_parts[1]
+                string_length = len(dork)
+                code_line = [i for i, s in enumerate(lines) if dork in s]
+            if code_line:
+                print('Number of ocurrences: ', len(code_line))
+                line = int(code_line[0]) + 1
                 print('First occurrence line: ', line)
             else:
                 return False
             
-    stringEnd = (codePosition+stringLength-1)
+    string_end = (code_position+string_length-1)
 
-    def secondBreakLineBefore(text):
-        if(codeLine[0] > 2):
-            linesStart = text.rfind('\n', 0, stringDecodedContent.rfind('\n', 0, codePosition)-1)
-            return linesStart
-        elif(codeLine[0] == 0):
-            linesStart = 0
+    def second_break_before(text):
+        if code_line[0] > 2:
+            lines_start = text.rfind('\n', 0, decoded_content.rfind('\n', 0, code_position)-1)
+            return lines_start
+        elif code_line[0] == 0:
+            lines_start = 0
         else:
-            linesStart = text.rfind('\n', 0, stringDecodedContent.rfind('\n', 0, codePosition))
-            return linesStart
+            lines_start = text.rfind('\n', 0, decoded_content.rfind('\n', 0, code_position))
+            return lines_start
 
-    def secondBreakLineAfter(text):
-        if(codeLine[0] > 2):
-            linesEnd = text.find('\n', stringDecodedContent.find('\n', stringEnd)+1)
-            return linesEnd
+    def second_break_after(text):
+        if code_line[0] > 2:
+            lines_end = text.find('\n', decoded_content.find('\n', string_end)+1)
+            return lines_end
         else:
-            linesEnd = text.find('\n', stringDecodedContent.find('\n', stringEnd))
-            return linesEnd
+            lines_end = text.find('\n', decoded_content.find('\n', string_end))
+            return lines_end
 
-    startBreak = secondBreakLineBefore(stringDecodedContent)
+    start_break = second_break_before(decoded_content)
 
-    endBreak = secondBreakLineAfter(stringDecodedContent)
+    end_break = second_break_after(decoded_content)
 
-    codePart = stringDecodedContent[startBreak:endBreak]
+    code_part = decoded_content[start_break:end_break]
 
-    return codePart
+    return code_part
