@@ -3,7 +3,6 @@ import requests
 import json
 import sys
 from time import sleep
-#from art import text2art
 import urllib.parse as urllib
 from pprint import pprint
 from converter import converter
@@ -14,7 +13,7 @@ printHeader()
 
 def search(user, token, repo, dorklist):
 
-    if dorklist not None:
+    if dorklist:
         dorks = open(dorklist).read().splitlines()
     else:
         dorks = open('./small_dorklist.txt').read().splitlines()
@@ -22,18 +21,18 @@ def search(user, token, repo, dorklist):
     for string in dorks:
 
         if token:
-            if(repo not None):
-                parsedResponse = requests.get('https://api.github.com/search/code?q=%s' % urllib.quote(('repo:'+user+'/'+repo+' '+string)), headers={'Authorization': 'token %s' % token})
+            if repo:
+                parsed_response = requests.get('https://api.github.com/search/code?q=%s' % urllib.quote(('repo:'+user+'/'+repo+' '+string)), headers={'Authorization': 'token %s' % token})
             else:
-                parsedResponse = requests.get('https://api.github.com/search/code?q=%s' % urllib.quote(('user:'+user+' '+string)), headers={'Authorization': 'token %s' % token})
+                parsed_response = requests.get('https://api.github.com/search/code?q=%s' % urllib.quote(('user:'+user+' '+string)), headers={'Authorization': 'token %s' % token})
         else:
-            if(repo not None):
-                parsedResponse = requests.get('https://api.github.com/search/code?q=%s' % urllib.quote(('repo:'+user+'/'+repo+' '+string)))
+            if repo:
+                parsed_response = requests.get('https://api.github.com/search/code?q=%s' % urllib.quote(('repo:'+user+'/'+repo+' '+string)))
             else:
-                parsedResponse = requests.get('https://api.github.com/search/code?q=%s' % urllib.quote(('user:'+user+' '+string)))
+                parsed_response = requests.get('https://api.github.com/search/code?q=%s' % urllib.quote(('user:'+user+' '+string)))
 
-        if parsedResponse.status_code == 200 and len(parsedResponse.json()['items']) != 0:
-            response = parsedResponse.json()['items']
+        if parsed_response.status_code == 200 and len(parsed_response.json()['items']) != 0:
+            response = parsed_response.json()['items']
 
             size = len(response)
 
@@ -72,7 +71,7 @@ def search(user, token, repo, dorklist):
                     print(Fore.CYAN,"\n=================================\n",Style.RESET_ALL)
                     print("Content searched: ", string, "\nRepository: ", ResponseObj.repoName, "\nFile: ", ResponseObj.fileName, "\nUrl: ", ResponseObj.fileUrl, "\nRepo Url: ", ResponseObj.repoUrl,"\n")            
 
-        elif parsedResponse.status_code == 403:
+        elif parsed_response.status_code == 403:
             print(Fore.GREEN+'\nLet\'s respect GitHub API Rate Limit, give me a minute to rest.')
             sleep(60)
 
