@@ -51,30 +51,39 @@ def search(user, token, repo, dorklist):
                         repoUrl = repository['url']
                         resultUrl = response[i]['url']
 
-                    if token:               
-                        request = requests.get(ResponseObj.resultUrl, headers={'Authorization': 'token %s' % token})
-                    else:
-                        request = requests.get(ResponseObj.resultUrl)
+                    try:
 
-                    if request.status_code == 200:
-                        encodedContent = request.json()['content']
-                    else:
-                        print('Nothing found with %s\n' % string)
+                        if token:               
+                            request = requests.get(ResponseObj.resultUrl, headers={'Authorization': 'token %s' % token})
+                        else:
+                            request = requests.get(ResponseObj.resultUrl)
 
-                    if 'filename:' not in string and 'extension:' not in string:
+                        if request.status_code == 200:
+                            encodedContent = request.json()['content']
+                        else:
+                            print('Nothing found with %s\n' % string)
 
-                        print(Fore.CYAN,"\n=================================\n",Style.RESET_ALL)
-                        print("Content searched: ", string, "\nRepository: ", ResponseObj.repoName, "\nFile: ", ResponseObj.fileName, "\nUrl: ", ResponseObj.fileUrl, "\nRepo Url: ", ResponseObj.repoUrl,"\n")
+                        if 'filename:' not in string and 'extension:' not in string:
 
-                        code = converter(encodedContent, string)
-                        if code == False:
-                            code = 'There was an issue searching for the code snippet.'
+                            print(Fore.CYAN,"\n=================================\n",Style.RESET_ALL)
+                            print("Content searched: ", string, "\nRepository: ", ResponseObj.repoName, "\nFile: ", ResponseObj.fileName, "\nUrl: ", ResponseObj.fileUrl, "\nRepo Url: ", ResponseObj.repoUrl,"\n")
 
-                        print("\nCode snippet:\n%s" % code)
+                            code = converter(encodedContent, string)
+                            if code == False:
+                                code = 'There was an issue searching for the code snippet.'
 
-                    else:
-                        print(Fore.CYAN,"\n=================================\n",Style.RESET_ALL)
-                        print("Content searched: ", string, "\nRepository: ", ResponseObj.repoName, "\nFile: ", ResponseObj.fileName, "\nUrl: ", ResponseObj.fileUrl, "\nRepo Url: ", ResponseObj.repoUrl,"\n")            
+                            print("\nCode snippet:\n%s" % code)
+
+                        else:
+                            print(Fore.CYAN,"\n=================================\n",Style.RESET_ALL)
+                            print("Content searched: ", string, "\nRepository: ", ResponseObj.repoName, "\nFile: ", ResponseObj.fileName, "\nUrl: ", ResponseObj.fileUrl, "\nRepo Url: ", ResponseObj.repoUrl,"\n")    
+
+                    except KeyboardInterrupt:
+                        print(Fore.RED+'\nSearch interrupted by the user.')
+                        return
+
+                    except:
+                        print(Fore.RED+'\nThere was a problem with this dork search, moving on to the next one.')
 
             elif parsed_response.status_code == 403:
                 print(Fore.GREEN+'\nLet\'s respect GitHub API Rate Limit, give me a minute to rest.')
@@ -87,3 +96,4 @@ def search(user, token, repo, dorklist):
 
     except KeyboardInterrupt:
         print(Fore.RED+'\nSearch interrupted by the user.')
+        return
